@@ -1,18 +1,21 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import Bookmark from "./Bookmark";
-const API = import.meta.env.VITE_BASE_URL
 
+const API = import.meta.env.VITE_API_URL;
 
 function Bookmarks() {
   const [bookmarks, setBookmarks] = useState([]);
-  
-  useEffect(()=> {
+  useEffect(() => {
     fetch(`${API}/bookmarks`)
-    .then((response) => response.json())
-    .then( bookmarks => setBookmarks(bookmarks))
-    .catch(error => console.log(error))
-  }, [])
-
+      .then(response => response.json())
+      .then((responseJSON) => {
+        console.log(responseJSON);
+        setBookmarks(responseJSON.data.payload);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <div className="Bookmarks">
       <section>
@@ -25,8 +28,8 @@ function Bookmarks() {
             </tr>
           </thead>
           <tbody>
-            {bookmarks.map((bookmark, index) => {
-              return <Bookmark key={index} bookmark={bookmark} index={index} />;
+            {bookmarks.map((bookmark) => {
+              return <Bookmark key={bookmark.id} bookmark={bookmark} />;
             })}
           </tbody>
         </table>
