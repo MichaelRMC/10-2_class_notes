@@ -43,14 +43,14 @@ export default function ShowsIndex() {
             Search Shows:
             <input
               type="text"
-              // value={searchTitle}
+              value={searchTitle}
               id="searchTitle"
-              // onChange={handleTextChange}
+              onChange={handleTextChange}
             />
           </label>
           <section className="shows-index">
             { shows.map((show) => {
-              return <ShowListing show = {show} key = {show.id}/>
+              return <ShowListing show={show} key={show.id}/>
             })}
           </section>
         </section>

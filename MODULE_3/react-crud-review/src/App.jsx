@@ -24,7 +24,7 @@ function App() {
         </Routes>
         {/* Using invalid path prop value */}
         <Footer />
-        <Route path={123} element={<Home />} />
+        <Route path={"/"} element={<Home />} />
       </Rotter>
     </div>
   );

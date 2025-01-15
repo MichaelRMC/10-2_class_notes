@@ -2,7 +2,16 @@
 
 
 body {
-	font-family: 'Google Sans', sans-serif, system-ui; 
+	font-family: 'Google Sans', sans-serif, system-ui;
+	color: #333; 
+}
+
+.card-container {
+	width: 500px;
+	background-color: #f2f2f2;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 10px;
+	border-left: 5px #3f51b5;
 }
 
 

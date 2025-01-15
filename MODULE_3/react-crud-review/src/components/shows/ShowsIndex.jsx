@@ -9,8 +9,10 @@ export default function ShowsIndex() {
   const [loadingError, setLoadingError] = useState('false');
 
   useEffect(() => {
-    getAllShows()
-    setShows(showsJson); // Error 1: Missing .then() for the promise returned by getAllShows
+    getAllShows().then((result) => {
+      setShows(showsJson); // Error 1: Missing .then() for the promise returned by getAllShows
+    
+    })
     setLoadingError(false);
   }, []);
 
@@ -33,8 +35,8 @@ export default function ShowsIndex() {
             />
           </label>
           <section className="shows-index">
-            {show.map((show) => { // Error 3: Incorrect prop name 'show' instead of 'shows'
-              return <ShowListing shows={show} key={show.id} />; // Error 4: Passing 'shows' prop instead of 'show'
+            {shows.map((show) => { // Error 3: Incorrect prop name 'show' instead of 'shows'
+              return <ShowListing show={show} key={show.id} />; // Error 4: Passing 'shows' prop instead of 'show'
             })}
           </section>
         </section>

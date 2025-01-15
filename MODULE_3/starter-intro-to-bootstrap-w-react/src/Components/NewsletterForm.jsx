@@ -40,7 +40,7 @@ export default function NewsletterForm() {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
           />
-          <div id="emailHelp" className="">
+          <div id="emailHelp" className="form-control">
             No trees will be harmed in delivering our newsletters
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function NewsletterForm() {
           </label>
         </div>
         {/* <!-- Se classes btn btn-pritmary --> */}
-        <button type="button" class="btn btn-info">Submit</button>
+        <button type="button" class="btn btn-primary">Submit</button>
       </form>
     </div>
   );

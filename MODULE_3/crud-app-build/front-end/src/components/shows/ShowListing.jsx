@@ -16,7 +16,8 @@ export default function ShowListing({ show }) {
           {show.listedIn}
         </p>
         <p>
-          <span>Duration:</span> {show.duration}
+          <span>Duration:</span>
+          { show.duration }
         </p>
       </aside>
     </article>
